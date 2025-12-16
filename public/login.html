@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login | Online Sales</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="bg">
+  <div class="auth-wrap">
+    <div class="card auth-card">
+      <div class="brand">
+        <div class="logo">OS</div>
+        <div>
+          <div class="brand-title">Online Sales</div>
+          <div class="brand-sub">Login untuk masuk dashboard</div>
+        </div>
+      </div>
+
+      <form id="loginForm" class="form">
+        <label>Email</label>
+        <input id="email" type="email" placeholder="cust@mail.com" required />
+
+        <label>Password</label>
+        <input id="password" type="password" placeholder="••••••••" required />
+
+        <button class="btn" type="submit">Login</button>
+        <p id="msg" class="muted"></p>
+
+        <div class="hint">
+          <div><b>Akun seed</b>:</div>
+          <div>admin@mail.com / admin123</div>
+          <div>staff@mail.com / staff123</div>
+          <div>cust@mail.com / cust123</div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
