@@ -1,10 +1,14 @@
 {
   "name": "online-sales-db",
   "version": "1.0.0",
-  "main": "src/app.js",
+  "private": true,
   "type": "commonjs",
+  "main": "src/app.js",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
-    "start": "node src/app.js",
+    "start": "mkdir -p data && node src/app.js",
     "dev": "node src/app.js",
     "db:init": "node src/db/init.js",
     "db:seed": "node src/db/seed.js"
