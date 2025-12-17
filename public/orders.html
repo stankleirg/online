@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Orders | Online Sales</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="bg">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="side-head">
+        <div class="logo">OS</div>
+        <div>
+          <div class="side-title">ONLINE SALES</div>
+          <div id="roleBadge" class="side-sub">Role: -</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item" href="/dashboard.html">Dashboard</a>
+        <a class="nav-item" href="/products.html">Products</a>
+        <a class="nav-item active" href="/orders.html">Orders</a>
+        <a class="nav-item" href="/payments.html">Payments</a>
+      </nav>
+
+      <div class="side-foot">
+        <button class="btn ghost" id="logoutBtn">Logout</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="page-title">Orders</div>
+          <div class="muted" id="hello">-</div>
+        </div>
+        <div class="filters">
+          <button class="btn" id="btnReloadOrders">Reload</button>
+        </div>
+      </header>
+
+      <!-- Customer-only: create order (simple) -->
+      <section class="card panel" id="orderCreateCard" style="display:none;">
+        <div class="panel-title">Buat Order (Customer)</div>
+        <form id="orderForm" class="form-grid">
+          <div>
+            <label>Product ID</label>
+            <input class="input" id="o_productId" type="number" min="1" placeholder="1" required />
+          </div>
+          <div>
+            <label>Qty</label>
+            <input class="input" id="o_qty" type="number" min="1" placeholder="2" required />
+          </div>
+          <div style="grid-column: 1 / -1; display:flex; gap:10px;">
+            <button class="btn" type="submit">Create Order</button>
+            <span class="muted" id="orderMsg"></span>
+          </div>
+        </form>
+        <div class="muted small">*Demo order sederhana: 1 produk per order. (Nilai aman: Create + Read jelas)</div>
+      </section>
+
+      <section class="card panel">
+        <div class="panel-title">Daftar Order</div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Code</th>
+              <th>User</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="ordersTbody">
+            <tr><td colspan="6" class="muted">Loading…</td></tr>
+          </tbody>
+        </table>
+        <div class="muted small">
+          *Customer: lihat order milik sendiri + Cancel (Delete). Staff/Admin: bisa update status.
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

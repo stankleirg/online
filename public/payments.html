@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Payments | Online Sales</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="bg">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="side-head">
+        <div class="logo">OS</div>
+        <div>
+          <div class="side-title">ONLINE SALES</div>
+          <div id="roleBadge" class="side-sub">Role: -</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item" href="/dashboard.html">Dashboard</a>
+        <a class="nav-item" href="/products.html">Products</a>
+        <a class="nav-item" href="/orders.html">Orders</a>
+        <a class="nav-item active" href="/payments.html">Payments</a>
+      </nav>
+
+      <div class="side-foot">
+        <button class="btn ghost" id="logoutBtn">Logout</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="page-title">Payments</div>
+          <div class="muted" id="hello">-</div>
+        </div>
+        <div class="filters">
+          <button class="btn" id="btnReloadPayments">Reload</button>
+        </div>
+      </header>
+
+      <!-- Customer-only: create payment -->
+      <section class="card panel" id="paymentCreateCard" style="display:none;">
+        <div class="panel-title">Submit Payment (Customer)</div>
+        <form id="paymentForm" class="form-grid">
+          <div>
+            <label>Order ID</label>
+            <input class="input" id="pay_orderId" type="number" min="1" placeholder="1" required />
+          </div>
+          <div>
+            <label>Method</label>
+            <input class="input" id="pay_method" placeholder="transfer / cash / ewallet" required />
+          </div>
+          <div>
+            <label>Amount</label>
+            <input class="input" id="pay_amount" type="number" min="0" placeholder="250000" required />
+          </div>
+          <div style="grid-column: 1 / -1; display:flex; gap:10px;">
+            <button class="btn" type="submit">Create Payment</button>
+            <span class="muted" id="payMsg"></span>
+          </div>
+        </form>
+        <div class="muted small">*Demo payment: input manual. Admin nanti verify/reject (Update).</div>
+      </section>
+
+      <section class="card panel">
+        <div class="panel-title">Daftar Payment</div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Order</th>
+              <th>Method</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="paymentsTbody">
+            <tr><td colspan="6" class="muted">Loading…</td></tr>
+          </tbody>
+        </table>
+        <div class="muted small">*Admin: verify/reject (Update). Customer: create payment (Create) dan lihat (Read).</div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
